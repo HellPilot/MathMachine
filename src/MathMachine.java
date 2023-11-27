@@ -8,7 +8,7 @@ public class MathMachine {
         System.out.println("Для скольки чисел выполнить рассчет? ");
         int length = scan.nextInt();
         double[] arrmath = new double[length];
-        System.out.println("Ââåäèòå ÷èñëà: ");
+        System.out.println("Введите числа: ");
         for (int i = 0; i < length; i++)
             arrmath[i] = scan.nextDouble();
         System.out.println("НОД = " + nod(arrmath));
