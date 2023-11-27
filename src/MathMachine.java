@@ -1,27 +1,27 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-// Данная программа предназначена для вычисления НОД, НОК и среднего арифметического для любого количества неотрицательных чисел.
+// Р”Р°РЅРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РќРћР”, РќРћРљ Рё СЃСЂРµРґРЅРµРіРѕ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРіРѕ РґР»СЏ Р»СЋР±РѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РЅРµРѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹С… С‡РёСЃРµР».
 public class MathMachine {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Для скольки чисел выполнить рассчет? ");
+        System.out.println("Р”Р»СЏ СЃРєРѕР»СЊРєРё С‡РёСЃРµР» РІС‹РїРѕР»РЅРёС‚СЊ СЂР°СЃСЃС‡РµС‚? ");
         int length = scan.nextInt();
         double[] arrmath = new double[length];
-        System.out.println("Введите числа: ");
+        System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г : ");
         for (int i = 0; i < length; i++)
             arrmath[i] = scan.nextDouble();
-        System.out.println("НОД = " + nod(arrmath));
-        System.out.println("НОК = " + nok(arrmath));
-        System.out.println("Среднее арифметическое = " + midle(arrmath));
+        System.out.println("РќРћР” = " + nod(arrmath));
+        System.out.println("РќРћРљ = " + nok(arrmath));
+        System.out.println("РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ = " + midle(arrmath));
     }
 
-    static double min(double[] arrmin) { // Ищем минимальное значение в массиве
+    static double min(double[] arrmin) { // РС‰РµРј РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
         Arrays.sort(arrmin);
         return arrmin[0];
     }
 
-    static double nod(double[] arrnod) { // Ищем НОД
+    static double nod(double[] arrnod) { // Р’С‹С‡РёСЃР»СЏРµРј РќРћР”
         double resnod = min(arrnod);     //
         for (; resnod > 1; resnod--) {
             int k = 0;
@@ -36,7 +36,7 @@ public class MathMachine {
         return resnod;
     }
 
-    static double nok(double[] arrnok) { // Ищем НОК
+    static double nok(double[] arrnok) { // Р’С‹С‡РёСЃР»СЏРµРј РќРћРљ
         double resnok = min(arrnok);
         for (; ; resnok += min(arrnok)) {
             int k = 0;
@@ -51,7 +51,7 @@ public class MathMachine {
         return resnok;
     }
 
-    static double midle(double[] arrmid) {
+    static double midle(double[] arrmid) { // Р’С‹С‡РёСЃР»СЏРµРј СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ
         double mid = 0;
         for (double v : arrmid) {
             mid += v;
