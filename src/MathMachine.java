@@ -4,7 +4,6 @@ import java.util.Arrays;
 // Данная программа предназначена для вычисления НОД, НОК и среднего арифметического для любого количества неотрицательных чисел.
 public class MathMachine {
     public static void main(String[] args) {
-       // int length;
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Для скольки чисел выполнить рассчет? ");
