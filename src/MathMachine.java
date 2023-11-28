@@ -4,16 +4,26 @@ import java.util.Arrays;
 // Данная программа предназначена для вычисления НОД, НОК и среднего арифметического для любого количества неотрицательных чисел.
 public class MathMachine {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Для скольки чисел выполнить рассчет? ");
-        int length = scan.nextInt();
-        double[] arrmath = new double[length];
-        System.out.println("Введите числа: ");
-        for (int i = 0; i < length; i++)
-            arrmath[i] = scan.nextDouble();
-        System.out.println("НОД = " + nod(arrmath));
-        System.out.println("НОК = " + nok(arrmath));
-        System.out.println("Среднее арифметическое = " + midle(arrmath));
+       // int length;
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Для скольки чисел выполнить рассчет? ");
+            int length = scan.nextInt();
+            if(length<2) {
+                throw new Exception("Для работы программы нужно хотя бы 2 числа");
+            }
+            double[] arrmath = new double[length];
+            System.out.println("Введите числа: ");
+            for (int i = 0; i < length; i++)
+                arrmath[i] = scan.nextDouble();
+            System.out.println("НОД = " + nod(arrmath));
+            System.out.println("НОК = " + nok(arrmath));
+            System.out.println("Среднее арифметическое = " + midle(arrmath));
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 
     static double min(double[] arrmin) { // Ищем минимальное значение в массиве
